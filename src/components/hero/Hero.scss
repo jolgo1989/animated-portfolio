@@ -22,6 +22,11 @@
         color: rebeccapurple;
         letter-spacing: 10px;
       }
+
+      h1 {
+        font-size: 88px;
+      }
+
       .buttons {
         button {
           padding: 20px;
@@ -30,13 +35,10 @@
           background-color: transparent;
           color: white;
           margin-right: 20px;
+          //? El cursor pointer no funciona
           cursor: pointer;
           font-weight: 300;
         }
-      }
-
-      h1 {
-        font-size: 88px;
       }
 
       img {
