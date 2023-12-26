@@ -19,7 +19,10 @@ const Parallax = ({ type }) => {
   // useScroll: Hook de Framer Motion para obtener el progreso del desplazamiento
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"], //La ainmación iniciara cuando el viewport inicia y y termine
+    //El primer valor, "start start", indica que la animación debería comenzar cuando el borde superior del contenedor (referenciado por ref) coincide con el borde superior del viewport.
+
+    //El segundo valor, "end start", indica que la animación debería finalizar cuando el borde superior del contenedor coincide con el borde inferior del viewport.
+    offset: ["start start", "end start"],
   });
 
   // Transformación para animar el desplazamiento vertical del texto
