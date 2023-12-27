@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import "./Portfolio.scss";
 
 const items = [
@@ -30,7 +30,36 @@ const items = [
 ];
 
 const Single = ({ items }) => {
-  return <section>{items.title}</section>;
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [
+      -300, 300,
+    ] /*Velocidad a la animación al momento de desplazarnos en el eje Y*/
+  );
+
+  return (
+    <section>
+      <div className="container">
+        <div className="wrapper">
+          <div className="imageContainer" ref={ref}>
+            <img src={items.img} alt="" />
+          </div>
+          <motion.div className="textContainer" style={{ y }}>
+            <h2>{items.title}</h2>
+            <p>{items.desc}</p>
+            <button>See Demo</button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const Portfolio = () => {
