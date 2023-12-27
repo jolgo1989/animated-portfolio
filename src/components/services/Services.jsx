@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Services.scss";
 import { motion, useInView } from "framer-motion";
 
+// Definición de las variantes de animación para el componente Services
 const variants = {
   initial: {
     x: -500,
@@ -19,11 +20,15 @@ const variants = {
   },
 };
 
+// Componente funcional Services
 const Services = () => {
+  // Referencia para el contenedor principal del componente
   const ref = useRef();
 
+  // Hook useInView para determinar si el componente está en la vista
   const isInView = useInView(ref, { margin: "-100px" });
 
+  // Renderización del componente Services con animaciones
   return (
     <motion.div
       className="services"
