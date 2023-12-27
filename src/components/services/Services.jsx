@@ -96,6 +96,20 @@ const Services = () => {
           </p>
           <button>Go</button>
         </motion.div>
+
+        <motion.div
+          className="box"
+          whileHover={{ background: "lightgray", color: "black" }}
+        >
+          <h2>Branding</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+            cupiditate doloremque, sunt ipsam ullam, consectetur voluptate sequi
+            aspernatur explicabo repudiandae quisquam assumenda laudantium ad,
+            blanditiis facilis voluptates minus sint doloribus.
+          </p>
+          <button>Go</button>
+        </motion.div>
       </motion.div>
     </motion.div>
   );
