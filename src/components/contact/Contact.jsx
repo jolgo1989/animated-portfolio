@@ -1,6 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Contact.scss";
 import { motion, useInView } from "framer-motion";
+
+//Para el envio del email trabajar con https://www.emailjs.com/
+
+//?#1 importar emailjs
+import emailjs from "@emailjs/browser";
 
 // Variants para animaciones de entrada
 const variants = {
@@ -22,8 +27,36 @@ const Contact = () => {
   // Referencia para el hook useInView
   const ref = useRef();
 
+  //?#2 Crear la referencia
+  const formRef = useRef();
+  const [error, setError] = useState(false); //?#5 crear el useState
+  const [success, setSuccess] = useState(true);
+
   // Hook useInView para detectar si el componente está en el viewport
   const isInview = useInView(ref, { margin: "-100px" });
+
+  //?#4 Rutas para SERVICE_ID,EMPLATE_ID y PUBLIC_KEY
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_bntzlgt", //YOUR_SERVICE_ID(Email Services/clic en el servicio de email/Service ID/service_bntzlgt)
+        "template_1ov5h1s", //YOUR_TEMPLATE_ID"/Email Templates/create new template/settings/Template ID/template_kgz163s
+        formRef.current,
+        "9vzdrT5DIo-9eolTL" //YOUR_PUBLIC_KEY(Account/Public Key/9vzdrT5DIo-9eolTL)
+      )
+      .then(
+        () => {
+          setSuccess(true); //?#Aplicar useState
+        },
+        () => {
+          setError(true);
+          console.error("Error sending email:", error);
+        }
+      );
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -85,14 +118,18 @@ const Contact = () => {
         </motion.div>
 
         <motion.form
+          ref={formRef} //?#3 referencia al form
+          onSubmit={sendEmail} //?#6 colocar  onSubmit en el form
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" />
-          <input type="email" required placeholder="Email" />
-          <textarea rows={8} required placeholder="Message" />
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} required placeholder="Message" name="message" />
           <button>Submit</button>
+          {error && "Error"} {/*#7Detectar errores*/}
+          {success && "Success"}
         </motion.form>
       </div>
     </motion.div>

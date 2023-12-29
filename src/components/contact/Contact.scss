@@ -29,6 +29,7 @@
       stroke: orange;
       position: absolute;
       margin: auto;
+      z-index: -1; //Se debe colar esto porque a la hora de implementar emailJS no deja escribir los datos para el envio del email
     }
 
     form {
