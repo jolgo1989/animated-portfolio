@@ -36,7 +36,7 @@ const Services = () => {
       initial="initial"
       // whileInView="animate" //Metodo para cuando se haca scroll la animation se active
       ref={ref}
-      animate={isInView && "animate"}
+      animate={"animate"}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -102,6 +102,7 @@ const Services = () => {
           <button>Go</button>
         </motion.div>
 
+        {/*//! Este div se desaparece en la resolución mobile debe corregirlo  */}
         <motion.div
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}

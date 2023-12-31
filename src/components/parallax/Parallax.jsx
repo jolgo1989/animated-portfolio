@@ -44,7 +44,7 @@ const Parallax = ({ type }) => {
     >
       {/* Título animado con desplazamiento vertical */}
       <motion.h1 style={{ y: yText }}>
-        {type === "services" ? "what we Do" : "what we did"}
+        {type === "services" ? "what we Do ?" : "what we did"}
       </motion.h1>
 
       {/* Elemento de montañas (posiblemente debería tener contenido real) */}
