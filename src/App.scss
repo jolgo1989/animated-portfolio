@@ -1,0 +1,39 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+}
+
+// .app {
+//   //Fondo de color
+//   background-image: linear-gradient(
+//     to left top,
+//     #aed9e0,
+//     #78a3b5,
+//     #4b6f8b,
+//     #293e5f,
+//     #111132
+//   );
+
+//   //Text color
+//   color: #fff;
+//   height: 100vh;
+
+//   //Button color
+//   // color: #00c9b7;
+// }

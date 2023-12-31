@@ -1,5 +1,17 @@
+import "./app.scss";
+import Hero from "./components/hero/Hero";
+
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <section>
+        <Hero />
+      </section>
+      <section>Hero</section>
+      <section>Hero</section>
+      <section>Hero</section>
+    </div>
+  );
 };
 
 export default App;
