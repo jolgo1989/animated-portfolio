@@ -1,13 +1,13 @@
 .hero {
   background-image: linear-gradient(
-    to left top,
+    to top,
     #aed9e0,
     #78a3b5,
     #4b6f8b,
     #293e5f,
     #111132
   );
-  height: calc(100vh - 6.25em);
+  height: 100vh;
 
   .wrapper {
     max-width: 29.125rem;
