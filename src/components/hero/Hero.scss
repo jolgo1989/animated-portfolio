@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   background-image: linear-gradient(
     to top,
     #aed9e0,
@@ -18,12 +19,27 @@
     text-align: center;
     justify-content: center;
 
-    h1 {
-      font-size: 5.5rem;
+    .textContainer {
+      h1 {
+        font-size: 5.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
     }
 
-    h2 {
-      font-size: 2.5rem;
+    .social {
+      position: absolute;
+      top: 40px; /* Ajusta la distancia desde la parte superior */
+      right: 70px; /* Ajusta la distancia desde la izquierda */
+      display: flex;
+      gap: 20px;
+      font-size: 1.5rem;
+
+      a {
+        color: #fff;
+      }
     }
   }
 }

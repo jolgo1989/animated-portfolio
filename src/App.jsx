@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div>
       <section className="home">
-        <Navbar />
         <Hero />
       </section>
       <section>Hero</section>
