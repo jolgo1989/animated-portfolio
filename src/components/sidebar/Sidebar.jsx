@@ -42,7 +42,7 @@ const Sidebar = () => {
         <Links />
       </motion.div>
 
-      {/* Botón de alternancia para abrir/cerrar el sidebar */}
+      {/*//**  Botón de alternancia para abrir/cerrar el sidebar */}
       <ToggleButton setOpen={setOpen} />
     </motion.div>
   );
