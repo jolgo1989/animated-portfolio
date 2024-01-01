@@ -1,5 +1,6 @@
 import React from "react";
 import "./hero.scss";
+import Sidebar from "../sidebar/Sidebar";
 import {
   FaSquareXTwitter,
   FaSquareFacebook,
@@ -10,6 +11,7 @@ import {
 const Hero = () => {
   return (
     <div className="hero">
+      <Sidebar />
       <div className="wrapper">
         <div className="social">
           <a href="#">
